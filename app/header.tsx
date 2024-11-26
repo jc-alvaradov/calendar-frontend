@@ -4,7 +4,7 @@ import NavLink from "./nav-link";
 const links = [
   { href: "/", label: "Home" },
   { href: "/our-team", label: "Our Team" },
-  { href: "/about-us", label: "About Us" },
+  { href: "/about-us", label: "Nosotros" },
 ];
 
 export default function Header() {
