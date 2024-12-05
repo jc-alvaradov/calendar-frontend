@@ -3,7 +3,7 @@ import { JWT } from "google-auth-library";
 import fs from "fs";
 import path from "path";
 
-export function createCredentialsFile() {
+function createCredentialsFile() {
   const credentialsPath = path.join(process.cwd(), "credentials.json");
 
   if (!fs.existsSync(credentialsPath)) {
