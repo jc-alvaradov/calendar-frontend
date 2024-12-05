@@ -2,6 +2,7 @@ import { google } from "googleapis";
 import { JWT } from "google-auth-library";
 
 export const getGCPCredentials = async () => {
+  try {
   // for Vercel, use environment variables
   if (process.env.GCP_PRIVATE_KEY) {
     return {
@@ -18,6 +19,9 @@ export const getGCPCredentials = async () => {
     client_email: credentials.default.client_email,
     private_key: credentials.default.private_key,
   };
+} catch(e) {
+  console.error("Error getting GCP credentials");
+  return {};
 };
 
 export async function GET() {
