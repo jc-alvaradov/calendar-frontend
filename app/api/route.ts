@@ -3,25 +3,26 @@ import { JWT } from "google-auth-library";
 
 export const getGCPCredentials = async () => {
   try {
-  // for Vercel, use environment variables
-  if (process.env.GCP_PRIVATE_KEY) {
+    // for Vercel, use environment variables
+    if (process.env.GCP_PRIVATE_KEY) {
+      return {
+        client_email: process.env.GCP_SERVICE_ACCOUNT_EMAIL,
+        private_key: process.env.GCP_PRIVATE_KEY,
+        // projectId: process.env.GCP_PROJECT_ID,
+      };
+    }
+
+    // for local development, use credentials.json
+    const credentials = await import("../../credentials.json");
+
     return {
-      client_email: process.env.GCP_SERVICE_ACCOUNT_EMAIL,
-      private_key: process.env.GCP_PRIVATE_KEY,
-      // projectId: process.env.GCP_PROJECT_ID,
+      client_email: credentials.default.client_email,
+      private_key: credentials.default.private_key,
     };
+  } catch {
+    console.error("Error getting GCP credentials");
+    return {};
   }
-
-  // for local development, use credentials.json
-  const credentials = await import("../../credentials.json");
-
-  return {
-    client_email: credentials.default.client_email,
-    private_key: credentials.default.private_key,
-  };
-} catch(e) {
-  console.error("Error getting GCP credentials");
-  return {};
 };
 
 export async function GET() {
