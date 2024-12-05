@@ -1,4 +1,4 @@
-export function query(url: string) {
+export function query() {
   // return fetch(`${STRAPI_HOST}${url}`, {
   //   headers: {
   //     Authorization: `Bearer ${STRAPI_TOKEN}`,

@@ -18,7 +18,7 @@ export function createCredentialsFile() {
   return credentialsPath;
 }
 
-export async function GET(req: Request) {
+export async function GET() {
   const credentialsPath = createCredentialsFile();
   const credentials = JSON.parse(fs.readFileSync(credentialsPath, "utf8"));
 
@@ -74,7 +74,7 @@ export async function GET(req: Request) {
 
   console.log("Upcoming 10 events:");
 
-  events?.map((event, i) => {
+  events?.map((event) => {
     const start = event.start?.dateTime || event.start?.date;
     console.log(`${start} - ${event.summary}`);
   });
