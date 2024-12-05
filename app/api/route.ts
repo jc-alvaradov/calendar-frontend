@@ -3,7 +3,7 @@ import { JWT } from "google-auth-library";
 
 const getGCPCredentials = async () => {
   // for Vercel, use environment variables
-  if (process.env.GCP_PRIVATE_KEY) {
+  if (process.env.VERCEL) {
     return {
       client_email: process.env.GCP_SERVICE_ACCOUNT_EMAIL,
       private_key: process.env.GCP_PRIVATE_KEY,
