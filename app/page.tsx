@@ -31,7 +31,7 @@ export default async function Home() {
       </p>
       <Scheduler events={events} />
 
-      <div className="flex flex-col justify-center items-center">
+      <div className="flex flex-col justify-center items-center bg-lightyellow">
         <h1>Sigueme en Instagram</h1>
         <div className="flex gap-4">
           <Image

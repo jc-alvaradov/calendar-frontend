@@ -11,6 +11,7 @@ export default {
     extend: {
       colors: {
         yellow: "hsl(var(--yellow))",
+        lightyellow: "hsl(var(--light-yellow))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         footer: "hsl(var(--footer))",
