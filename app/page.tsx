@@ -33,34 +33,38 @@ export default async function Home() {
 
       <div className="flex flex-col justify-center items-center bg-lightyellow">
         <h1>Sigueme en Instagram</h1>
-        <div className="flex gap-4">
+        <div className="flex gap-2">
           <Image
             className=" rounded-lg"
             src={imagen}
             alt="food"
-            width={200}
+            width={220}
             height={300}
+            style={{ objectFit: "cover" }}
           />
           <Image
-            className=" rounded-lg"
+            className="rounded-lg"
             src={imagen2}
             alt="food"
-            width={200}
+            width={220}
             height={300}
+            style={{ objectFit: "cover" }}
           />
           <Image
-            className=" rounded-lg"
+            className="rounded-lg"
             src={imagen3}
             alt="food"
-            width={200}
+            width={220}
             height={300}
+            style={{ objectFit: "cover" }}
           />
           <Image
-            className=" rounded-lg"
+            className="rounded-lg"
             src={imagen4}
             alt="food"
-            width={200}
+            width={220}
             height={300}
+            style={{ objectFit: "cover" }}
           />
         </div>
       </div>

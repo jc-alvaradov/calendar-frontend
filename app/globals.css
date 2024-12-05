@@ -17,7 +17,8 @@ body {
     --yellow: 44, 97%, 86%;
     --light-yellow: 38, 40%, 96%;
     --footer: 240, 40%, 98%;
-    --primary: 245.14, 43.21%, 84.12%;
+    /* --primary: 245.14, 43.21%, 84.12%; */
+    --primary: 238, 59%, 76%;
     --primary-foreground: 0 0% 98%;
     --secondary: 47.5, 38.71%, 87.84%;
     --secondary-foreground: 0 0% 9%;
