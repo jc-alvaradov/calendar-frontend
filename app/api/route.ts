@@ -1,27 +1,27 @@
 import { google } from "googleapis";
 import { JWT } from "google-auth-library";
-import fs from "fs";
-import path from "path";
 
-function createCredentialsFile() {
-  const credentialsPath = path.join(process.cwd(), "credentials.json");
-
-  if (!fs.existsSync(credentialsPath)) {
-    const credentials = Buffer.from(
-      process.env.GOOGLE_CREDENTIALS || "",
-      "base64"
-    ).toString();
-
-    fs.writeFileSync(credentialsPath, credentials);
+export const getGCPCredentials = async () => {
+  // for Vercel, use environment variables
+  if (process.env.GCP_PRIVATE_KEY) {
+    return {
+      client_email: process.env.GCP_SERVICE_ACCOUNT_EMAIL,
+      private_key: process.env.GCP_PRIVATE_KEY,
+      // projectId: process.env.GCP_PROJECT_ID,
+    };
   }
 
-  return credentialsPath;
-}
+  // for local development, use credentials.json
+  const credentials = await import("../../credentials.json");
+
+  return {
+    client_email: credentials.default.client_email,
+    private_key: credentials.default.private_key,
+  };
+};
 
 export async function GET() {
-  const credentialsPath = createCredentialsFile();
-  const credentials = JSON.parse(fs.readFileSync(credentialsPath, "utf8"));
-
+  const credentials = await getGCPCredentials();
   const authClient = new JWT({
     email: credentials.client_email,
     key: credentials.private_key,
