@@ -1,9 +1,7 @@
-export function query() {
-  // return fetch(`${STRAPI_HOST}${url}`, {
-  //   headers: {
-  //     Authorization: `Bearer ${STRAPI_TOKEN}`,
-  //   },
-  // }).then((res) => res.json());
+export async function query() {
+  return fetch(`${process.env.NEXT_PUBLIC_API_URL}/api`).then((res) =>
+    res.json().then((data) => data.data)
+  );
 }
 
 export async function getHome() {
