@@ -8,7 +8,7 @@ function Scheduler({ events }: { events: EventType[] }) {
   return (
     <div className="flex items-center justify-center gap-4">
       <Calendar />
-      {events.map((event) => (
+      {events?.map((event) => (
         <Event key={event.id} event={event} />
       ))}
     </div>
