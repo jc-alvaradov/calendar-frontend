@@ -3,7 +3,3 @@ export async function query() {
     res.json().then((data) => data.data)
   );
 }
-
-export async function getHome() {
-  // return query("/api/home?populate=userPhoto").then((res) => res.data);
-}

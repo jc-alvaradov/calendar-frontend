@@ -14,10 +14,6 @@ export default function Footer() {
           <Textarea id="message" placeholder="Escribe tu mensaje aquí" />
           <Button>Enviar Mensaje</Button>
         </div>
-        <p className="">
-          © {new Date().getFullYear()} Tamara Fuentealba Atiendo en: San Pío X,
-          Oficina 1009, Providencia.
-        </p>
       </div>
       <div>
         <h1>LINKS DE INTERÉS</h1>
