@@ -1,5 +1,5 @@
-import Scheduler from "./components/scheduler";
-import Instagram from "./components/instagram";
+import Scheduler from "@/components/ui/scheduler";
+import Instagram from "@/components/ui/instagram";
 import { query } from "./service";
 
 export type EventType = {
@@ -13,8 +13,6 @@ export type EventType = {
 
 export default async function Home() {
   const events: EventType[] = await query();
-
-  console.log(events);
 
   return (
     <main>

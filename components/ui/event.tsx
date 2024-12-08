@@ -2,7 +2,7 @@
 
 import { Card, CardContent } from "@/components/ui/card";
 
-import { EventType } from "../page";
+import { EventType } from "@/app/page";
 
 function Event({ event }: { event: EventType }) {
   return (

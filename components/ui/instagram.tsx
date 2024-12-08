@@ -1,9 +1,9 @@
 import Image from "next/image";
 
-import imagen from "../../public/assets/images/image01.jpg";
-import imagen2 from "../../public/assets/images/image02.jpg";
-import imagen3 from "../../public/assets/images/image03.jpeg";
-import imagen4 from "../../public/assets/images/image04.jpg";
+import imagen from "@/public/assets/images/image01.jpg";
+import imagen2 from "@/public/assets/images/image02.jpg";
+import imagen3 from "@/public/assets/images/image03.jpeg";
+import imagen4 from "@/public/assets/images/image04.jpg";
 
 export default function Instagram() {
   return (
