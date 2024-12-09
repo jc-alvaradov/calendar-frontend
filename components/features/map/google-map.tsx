@@ -1,4 +1,5 @@
 "use client";
+
 import React from "react";
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 
@@ -8,11 +9,10 @@ const containerStyle = {
 };
 
 const center = {
-  lat: -33.42083483241642,
-  lng: -70.60343965807157,
+  lat: Number(process.env.NEXT_PUBLIC_MAP_LAT) || 0,
+  lng: Number(process.env.NEXT_PUBLIC_MAP_LNG) || 0,
 };
-
-const GoogleMapComponent = () => {
+export function GoogleMapComponent() {
   return (
     <LoadScript
       googleMapsApiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || ""}
@@ -22,6 +22,4 @@ const GoogleMapComponent = () => {
       </GoogleMap>
     </LoadScript>
   );
-};
-
-export default GoogleMapComponent;
+}

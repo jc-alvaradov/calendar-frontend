@@ -1,10 +1,7 @@
-"use client";
+import { Card, CardContent } from "@/components/ui/shadcn";
+import { EventType } from "@/types/event";
 
-import { Card, CardContent } from "@/components/ui/card";
-
-import { EventType } from "@/app/page";
-
-function Event({ event }: { event: EventType }) {
+export function Event({ event }: { event: EventType }) {
   return (
     <Card key={event.id} className="bg-yellow shadow-none border-none">
       <CardContent className="grid gap-4">
@@ -15,5 +12,3 @@ function Event({ event }: { event: EventType }) {
     </Card>
   );
 }
-
-export default Event;

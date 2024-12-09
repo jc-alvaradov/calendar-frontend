@@ -1,11 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { Calendar } from "@/components/ui/calendar";
-import Event from "./event";
-import { EventType } from "@/app/page";
+import { Calendar } from "@/components/ui/shadcn";
+import { Event } from "@/components/features";
+import { EventType } from "@/types/event";
 
-function Scheduler({ events }: { events: EventType[] }) {
+export function Scheduler({ events }: { events: EventType[] }) {
   const [date, setDate] = useState<Date | undefined>(new Date());
 
   return (
@@ -22,5 +22,3 @@ function Scheduler({ events }: { events: EventType[] }) {
     </div>
   );
 }
-
-export default Scheduler;

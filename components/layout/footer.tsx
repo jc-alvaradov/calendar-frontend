@@ -1,9 +1,7 @@
-import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
-import Map from "@/components/ui/google-map";
+import { Button, Textarea, Label } from "@/components/forms/shadcn";
+import { GoogleMapComponent } from "@/components/features";
 
-export default function Footer() {
+export function Footer() {
   return (
     <footer className="flex w-full bg-footer h-auto mt-auto p-4 gap-4">
       <div>
@@ -42,7 +40,7 @@ export default function Footer() {
         <a href="#">Grupo de Enfermedades Metabólicas</a>
       </div>
       <div className="flex justify-center items-center rounded-lg">
-        <Map />
+        <GoogleMapComponent />
       </div>
     </footer>
   );
